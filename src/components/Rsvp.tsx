@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { CheckCircle, Heart, PaperPlaneTilt, User, Users, WhatsappLogo, XCircle } from '@phosphor-icons/react';
+import { CheckCircle, Heart, PaperPlaneTilt, User, WhatsappLogo, XCircle } from '@phosphor-icons/react';
 
 const WHATSAPP_NUMBER = '5524998759073';
 
 export function Rsvp() {
   const [attending, setAttending] = useState<boolean>(true);
   const [name, setName] = useState('');
-  const [hasCompanions, setHasCompanions] = useState(false);
-  const [companionNames, setCompanionNames] = useState('');
   const [message, setMessage] = useState('');
   const [showValidationError, setShowValidationError] = useState(false);
 
@@ -26,12 +24,6 @@ export function Rsvp() {
     if (attending) {
       text = `Olá Gabriela e Yuri!\n\nEstou passando para confirmar minha presença no casamento de vocês!\n\n`;
       text += `*Nome:* ${name.trim()}\n`;
-
-      if (hasCompanions && companionNames.trim()) {
-        text += `*Acompanhante(s):* ${companionNames.trim()}\n`;
-      } else {
-        text += `*Acompanhantes:* Não levarei acompanhante\n`;
-      }
 
       if (message.trim()) {
         text += `*Mensagem carinhosa:* ${message.trim()}\n`;
@@ -147,49 +139,6 @@ export function Rsvp() {
               </p>
             )}
           </div>
-
-          {attending && (
-            <div className="border-primary/15 bg-sand/40 mb-5 space-y-3 rounded-2xl border p-4 transition-all duration-200 ease-out">
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="has-companions"
-                  className="flex cursor-pointer items-center gap-2 font-sans text-sm font-medium text-gray-700"
-                >
-                  <Users size={18} className="text-primary" />
-                  <span>Levará acompanhante(s)?</span>
-                </label>
-                <input
-                  id="has-companions"
-                  type="checkbox"
-                  checked={hasCompanions}
-                  onChange={(e) => setHasCompanions(e.target.checked)}
-                  className="accent-primary h-4.5 w-4.5 cursor-pointer rounded-md transition-transform active:scale-95"
-                />
-              </div>
-
-              {hasCompanions && (
-                <div className="pt-2">
-                  <label
-                    htmlFor="companion-names"
-                    className="mb-1.5 block font-sans text-xs font-semibold tracking-wider text-gray-600 uppercase"
-                  >
-                    Nome(s) do(s) acompanhante(s)
-                  </label>
-                  <input
-                    id="companion-names"
-                    type="text"
-                    value={companionNames}
-                    onChange={(e) => setCompanionNames(e.target.value)}
-                    placeholder="Ex: Maria da Silva e Lucas da Silva"
-                    className="focus:ring-primary/25 focus:border-primary border-primary/20 w-full rounded-xl border bg-white/90 px-4 py-3 font-sans text-sm text-gray-800 placeholder-gray-400 transition-all duration-160 ease-out focus:bg-white focus:ring-2 focus:outline-none"
-                  />
-                  <p className="mt-1 font-sans text-[11px] text-gray-400">
-                    Inclua os nomes completos de quem irá acompanhá-lo(a).
-                  </p>
-                </div>
-              )}
-            </div>
-          )}
 
           <div className="mb-8">
             <label
