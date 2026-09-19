@@ -1,0 +1,11 @@
+dist
+node_modules
+src/assets/*
+public/*
+*.mp3
+*.jpg
+*.jpeg
+*.png
+*.svg
+*.ico
+src/styles/global.css
