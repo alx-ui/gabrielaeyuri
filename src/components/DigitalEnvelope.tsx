@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowUpRight, Gift, PixLogo } from '@phosphor-icons/react';
+import { Link } from 'react-router';
 import { PixModal } from 'components/PixModal';
 
 export function DigitalEnvelope() {
@@ -94,8 +95,8 @@ export function DigitalEnvelope() {
             </div>
 
             <div className="pt-2">
-              <a
-                href="https://www.finalfeliz.de/yuri-gabriela-"
+              <Link
+                to="/finalfeliz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="interactive-tactile bg-primary hover:bg-secondary focus:ring-primary/40 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-sans text-sm font-semibold text-white shadow-sm transition-all duration-160 ease-out hover:shadow-md focus:ring-2 focus:outline-none sm:py-3"
@@ -103,7 +104,7 @@ export function DigitalEnvelope() {
                 <Gift size={18} weight="bold" />
                 <span>Acessar Lista no Final Feliz</span>
                 <ArrowUpRight size={16} weight="bold" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
