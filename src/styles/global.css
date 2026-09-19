@@ -204,3 +204,51 @@ body {
     animation: none;
   }
 }
+
+@keyframes notFoundCardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.nf-reveal-card {
+  animation: notFoundCardReveal 400ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.nf-reveal-1 {
+  opacity: 0;
+  animation: notFoundCardReveal 350ms cubic-bezier(0.23, 1, 0.32, 1) 70ms forwards;
+}
+
+.nf-reveal-2 {
+  opacity: 0;
+  animation: notFoundCardReveal 350ms cubic-bezier(0.23, 1, 0.32, 1) 140ms forwards;
+}
+
+.nf-reveal-3 {
+  opacity: 0;
+  animation: notFoundCardReveal 350ms cubic-bezier(0.23, 1, 0.32, 1) 210ms forwards;
+}
+
+.nf-reveal-4 {
+  opacity: 0;
+  animation: notFoundCardReveal 350ms cubic-bezier(0.23, 1, 0.32, 1) 280ms forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nf-reveal-card,
+  .nf-reveal-1,
+  .nf-reveal-2,
+  .nf-reveal-3,
+  .nf-reveal-4 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
